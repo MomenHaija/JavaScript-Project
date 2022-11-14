@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="q-page.css">
+    
+</head>
+
+<body>
+    <!--<audio id="aud" controls><source  src="/pics/360P.mp3" type="audio/ogg"></audio-->
+        
+        <div class="green-container">
+        <div class="beige-container">
+            <div class="question-div">
+                <form onchange="out()"  id="form">
+                <p id="ques"></p>
+                <input type="radio" name="option" id="answer1">
+                <label for="answer1" id="labelans1" class="label"></label> <br> <br>
+                <input type="radio" name="option" id="answer2">
+                <label for="answer2" id="labelans2" class="label"></label> <br> <br>
+                <input type="radio" name="option" id="answer3">
+                <label for="answer3" id="labelans3" class="label"></label> <br> <br>
+                <input type="radio" name="option" id="answer4">
+                <label for="answer4" id="labelans4" class="label"></label> <br> <br>
+                </form>
+            </div>
+            <button id="next" type="button" onclick="shownextQuestion()">Next</button>
+            <button id="end"><a href="between.html" >End</a></button>
+            
+        </div>
+    </div>
+
+    <script >
+           var myQuestions = [
+        {
+            question: "1Messi has won a record number of Ballon d'Or awards - how many?",
+            answers: {
+                a: 'Six Ballon dOr awards',
+                b: 'one Ballon dOr awards',
+                c: 'seven Ballon dOr awards',
+                d: 'three Ballon dOr awards'
+            },
+            correctAnswer: 'Six Ballon dOr awards'
+        },
+        {
+            question: "Player known as  (الحكومه)?",
+            answers: {
+                a: 'Cristiano Ronaldo',
+                b: 'Leo Messi',
+                c: 'Kareem Binzima  .',
+                d: 'Luka Modric'
+            },
+            correctAnswer: 'Cristiano Ronaldo'
+        },
+        {
+            question: "Messi has won a record number of Ballon d'Or awards - how many?",
+            answers: {
+                a: 'Six Ballon dOr awards',
+                b: 'one Ballon dOr awards',
+                c: 'seven Ballon dOr awards',
+                d: 'three Ballon dOr awards'
+            },
+            correctAnswer: 'Six Ballon dOr awards'
+        },{
+            question: "Messi has won a record number of Ballon d'Or awards ------------------------------------------------------------------------------------------------------------------------------*************************-- how many?",
+            answers: {
+                a: 'Six Ballon dOr awards',
+                b: 'one Ballon dOr awards',
+                c: 'seven',
+                d: 'three Ballon dOr awards'
+            },
+            correctAnswer: 'Six Ballon dOr awards'
+        },{
+            question: "Messi has won a record number of Ballon d'Or awards - how many?",
+            answers: {
+                a: 'Six Ballon dOr awards',
+                b: 'one Ballon dOr awards',
+                c: 'seven Ballon dOr awards',
+                d: 'three '
+            },
+            correctAnswer: 'Six Ballon dOr awards'
+        }
+    ];
+
+    myCounter = 0;
+    shownextQuestion();
+    function shownextQuestion() {
+        document.getElementById("ques").innerHTML = myQuestions[myCounter].question;
+        document.getElementById("labelans1").innerHTML = myQuestions[myCounter].answers.a;
+        document.getElementById("labelans2").innerHTML = myQuestions[myCounter].answers.b;
+        document.getElementById("labelans3").innerHTML = myQuestions[myCounter].answers.c;
+        document.getElementById("labelans4").innerHTML = myQuestions[myCounter].answers.d;
+        
+
+        document.getElementById("answer1").checked=false;
+        document.getElementById("answer2").checked=false;
+        document.getElementById("answer3").checked=false;
+        document.getElementById("answer4").checked=false;
+        
+        myCounter += 1;
+        // document.getElementById("form").style.display="block";
+        if (myCounter==myQuestions.length){
+            document.getElementById("end").style.display='block';
+            document.getElementById("next").style.display='none';
+        }
+    } 
+    var score=0;
+    let radiox = document.getElementsByName("option");
+    let answer = document.getElementsByTagName("label");
+
+    function out() {
+       
+        for (let i = 0; i < radiox.length; i++) {
+            if (radiox[i].checked) {
+                let k=answer[i].innerHTML;
+                let x="Q"+String(myCounter);
+                localStorage.setItem(x,k);
+                if ( k == myQuestions[myCounter-1].correctAnswer) {
+                    score++;
+        }
+            }
+        }
+        console.log(score);
+        localStorage.setItem("score",score);
+        sessionStorage.setItem("you'r answer on Q"+myCounter+1,answer);
+
+    }
+    </script>    
+</body>
+
+</html>
