@@ -1,2 +1,2 @@
 #JavaScript-Project
-My JS project
+#My JS project
