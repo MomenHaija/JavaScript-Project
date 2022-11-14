@@ -28,67 +28,75 @@
                 <label for="answer4" id="labelans4" class="label"></label> <br> <br>
                 </form>
             </div>
-            <button id="next" type="button" onclick="shownextQuestion()">Next</button>
-            <button id="end"><a href="between.html" >End</a></button>
+            <button id="next" type="button" onclick="x() ,shownextQuestion()">Next</button>
+            <button id="end"><a href="between.html"style="text-decoration:none;color:#f6c9a7;" >End</a></button>
             
         </div>
     </div>
 
     <script >
            var myQuestions = [
-        {
-            question: "1Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven Ballon dOr awards',
-                d: 'three Ballon dOr awards'
-            },
-            correctAnswer: 'Six Ballon dOr awards'
+           {
+        question: " Q1.How old was Pele when he scored in his first Football World Cup final?",
+        answers: {
+            a: "17",
+            b: "18",
+            c: "19",
+            d: "20"
+
         },
-        {
-            question: "Player known as  (الحكومه)?",
-            answers: {
-                a: 'Cristiano Ronaldo',
-                b: 'Leo Messi',
-                c: 'Kareem Binzima  .',
-                d: 'Luka Modric'
-            },
-            correctAnswer: 'Cristiano Ronaldo'
+        correctAnswer: "17"
+    },
+    {
+        question: "Q2.Player known as \"الحكومه\"?",
+        answers: {
+            a: "Cristiano Ronaldo",
+            b: "Leo Messi",
+            c: "Kareem Binzima",
+            d: "Luka Modric"
+
         },
-        {
-            question: "Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven Ballon dOr awards',
-                d: 'three Ballon dOr awards'
-            },
-            correctAnswer: 'Six Ballon dOr awards'
-        },{
-            question: "Messi has won a record number of Ballon d'Or awards ------------------------------------------------------------------------------------------------------------------------------*************************-- how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven',
-                d: 'three Ballon dOr awards'
-            },
-            correctAnswer: 'Six Ballon dOr awards'
-        },{
-            question: "Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven Ballon dOr awards',
-                d: 'three '
-            },
-            correctAnswer: 'Six Ballon dOr awards'
-        }
+        correctAnswer: "Kareem Binzima"
+    },
+    {
+        question: "Q3.This voice returns to ?",
+        answers: {
+            a: "Mohammad Sawalha",
+            b: "Hafeed Darraje",
+            c: "Esam Shawaly",
+            d: "Fares Auad"
+
+        },
+        correctAnswer: "Hafeed Darraje"
+    },
+    {
+        question: "Q4.How many goals did Real Madrid receive in its match against Barcelona in 2009?",
+        answers: {
+            a: "16 goals",
+            b: "6 goals",
+            c: "8 goals",
+            d: "10 goals"
+
+        },
+        correctAnswer: "6 goals"
+    },
+    {
+        question: "Q5.In what year was the Football World Cup first held?",
+        answers: {
+            a: "1926",
+            b: "1930",
+            c: "1934",
+            d: "1938"
+
+        },
+        correctAnswer: "1930"
+    }
     ];
 
     myCounter = 0;
     shownextQuestion();
     function shownextQuestion() {
+        
         document.getElementById("ques").innerHTML = myQuestions[myCounter].question;
         document.getElementById("labelans1").innerHTML = myQuestions[myCounter].answers.a;
         document.getElementById("labelans2").innerHTML = myQuestions[myCounter].answers.b;
@@ -108,10 +116,11 @@
             document.getElementById("next").style.display='none';
         }
     } 
+    
     var score=0;
     let radiox = document.getElementsByName("option");
     let answer = document.getElementsByTagName("label");
-
+    
     function out() {
        
         for (let i = 0; i < radiox.length; i++) {
@@ -121,14 +130,22 @@
                 localStorage.setItem(x,k);
                 if ( k == myQuestions[myCounter-1].correctAnswer) {
                     score++;
-        }
-            }
-        }
-        console.log(score);
+                }
+               
+            
+        
         localStorage.setItem("score",score);
-        sessionStorage.setItem("you'r answer on Q"+myCounter+1,answer);
+        sessionStorage.setItem("you'r answer on Q"+myCounter,answer[i].innerHTML);
+            }
+        }}
+        function x(){
+        if (radiox[0].checked ==false &&radiox[1].checked ==false &&radiox[2].checked ==false&&radiox[3].checked ==false  ){
+            radiox[0].checked ==true;
+        }}
+        
+        
 
-    }
+    
     </script>    
 </body>
 

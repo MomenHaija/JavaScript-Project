@@ -27,7 +27,7 @@
                 </form>
             </div>
             <button id="next" type="button" onclick="show3()">Next</button>
-            <button id="end"><a href="score.html" >Fineshed</a></button>
+            <button id="end"><a href="score.html" style="text-decoration:none;color:#f6c9a7;">Fineshed</a></button>
             
         </div>
     </div>
@@ -35,62 +35,110 @@
     <script>
         var myQuestions3 = [
         {
-            question: "3Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven Ballon dOr awards',
-                d: 'three Ballon dOr awards'
-            },
-            correctAnswer: 'Six Ballon dOr awards'
+        question: "Q11.Which number should be there next in this series? 25, 24, 22, 19, 15",
+        answers: {
+            a: "14",
+            b: "12",
+            c: "10",
+            d: "8"
+
         },
-        {
-            question: "Player known as  (الحكومه)?",
-            answers: {
-                a: 'Cristiano Ronaldo',
-                b: 'Leo Messi',
-                c: 'Kareem Binzima  .',
-                d: 'Luka Modric'
-            },
-            correctAnswer: 'Cristiano Ronaldo'
-        }, {
-            question: "What is 30/3?",
-            answers: {
-                a: '3',
-                b: '5',
-                c: '10',
-                d: '33'
-            },
-            correctAnswer: '10'
+        correctAnswer: "10"
+    },
+    {
+        question: "Q12.Which one of the following teams has not won the European Championship?",
+        answers: {
+            a: "Denmark",
+            b: "Belgium",
+            c: "Greece",
+            d: "Romain"
+
         },
-        {
-            question: "Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven Ballon dOr awards',
-                d: 'three Ballon dOr awards'
-            },
-            correctAnswer: 'Six Ballon dOr awards'
-        },{
-            question: "Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven',
-                d: 'three Ballon dOr awards'
-            },
-            correctAnswer: 'Six Ballon dOr awards'
-        },{
-            question: "Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven Ballon dOr awards',
-                d: 'three '
-            },
-            correctAnswer: 'Six Ballon dOr awards'
-        }
+        correctAnswer: "Belgium"
+    },
+    {
+        question: "Q13.Who is the only player to win the Champions League with three different clubs (Ajax, Real Madrid, AC Milan)?",
+        answers: {
+            a: 'Clarence Seedorf',
+            b: 'van Basten',
+            c: 'Gunnar Nordahl',
+            d: 'Frank Rijkaard'
+        },
+        correctAnswer: 'Clarence Seedorf'
+    },
+    {
+        question: "Q14.Messi has won a record number of Ballon d'Or awards - how many? ",
+        answers: {
+            a: 'Six Ballon d\'Or awards',
+            b: 'one Ballon d\'Or awards',
+            c: 'seven Ballon d\'Or awards',
+            d: 'three Ballon d\'Or awards'
+        },
+        correctAnswer: 'seven Ballon d\'Or awards'
+    },
+    {
+        question: "Q15. With three titles each, which two teams have won the most European Championships?",
+        answers: {
+            a: "Germany and Spain",
+            b: 'one Ballon dOr awards',
+            c: "itally and england",
+            d: "france and jordan"
+
+        },
+        correctAnswer: 'Germany and Spain'
+    },
+    {
+        question: "Q16.how long is a match of football? ",
+        answers: {
+            a: '80 minutes',
+            b: '1 hour and a half',
+            c: '60 minutes',
+            d: '100 minutes'
+        },
+        correctAnswer: '1 hour and a half'
+    },
+    
+    {
+        question: "Q17.Which club has won the most Champions League titles? ",
+        answers: {
+            a: 'Real Madrid',
+            b: 'Barcelona',
+            c: 'Juventus',
+            d: 'Chelsea'
+        },
+        correctAnswer: 'Real Madrid'
+    },
+    {
+        question: "Q18.Which footballer has won the Premier League with both Leicester City and Manchester City? ",
+        answers: {
+            a: 'Riyad Mahrez',
+            b: 'haland',
+            c: 'mohammad salah',
+            d: 'DE bruyne'
+        },
+        correctAnswer: "Riyad Mahrez"
+    }, 
+
+    {
+        question: "Q19.how many players start on the football pitch?",
+        answers: {
+            a: '22 players',
+            b: '11 platers',
+            c: '9 players',
+            d: '12 players'
+        },
+        correctAnswer: '11 platers'
+    },
+    {
+        question: "Q20.how large is a goalkeepers box where he/she can pick up the ball? ",
+        answers: {
+            a: '18 yards',
+            b: '12 yards',
+            c: '25 yards',
+            d: '30 yards'
+        },
+        correctAnswer: '18 yards'
+    }
     ];
 
     myCounter = 0;
@@ -134,10 +182,12 @@
                     score++;
                     console.log(score);
         }
+        let y=myCounter+10;
+        sessionStorage.setItem("you'r answer on Q"+y,answer[i].innerHTML);
+        localStorage.setItem("score3",score);
             }
         }
-        sessionStorage.setItem("you'r answer on Q"+myCounter+1,answer);
-        localStorage.setItem("score3",score);
+        
     }
     </script>    
 </body>

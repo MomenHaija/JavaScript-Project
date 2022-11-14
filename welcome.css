@@ -46,9 +46,11 @@
   }
  
   .navbar{
-    background-color: #393E46;
+    margin-top: -5px;
+    background-color: #064E42;
     width: 100%;
-    /* position: fixed; */
+    height:73px;
+    
 }
 #b1{
     color: #FFEFD6;
@@ -80,10 +82,10 @@ li{
 }   */
 #footer{
     background-color: #064E42;
-    display: grid;
+    display: flex;
     
-    grid-template-columns: auto auto auto;
-    justify-content:space-around;
+    flex-direction: row; 
+    justify-content:space-between;
 
     color: #FFEFD6;
     padding-right: 13px;
@@ -92,8 +94,8 @@ li{
 .div_footer{
     display: flex;
     flex-direction: row;
-   justify-content: space-around;
-   background-color: #61764B;
+   
+   background-color: #064E42;
    color: aliceblue;
   
   } 

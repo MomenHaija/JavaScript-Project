@@ -1,15 +1,20 @@
 
 console.log("hi1");
 let x=localStorage.getItem("score3");
-console.log("hi2");
-console.log("x"+localStorage.getItem("score3"))
-console.log("hi3");
 console.log(localStorage.getItem("score3"));
-x=((x/400)*100);
-document.getElementsByClassName("rating")[0].innerHTML=x;
-document.getElementById("id1").innerHTML=x;
+var y=((x/20)*100);
+if(y<50)
+{
+  document.getElementById("fail").style.display='block';
+}
+else{ document.getElementById("pass").style.display='block';
+}
+
+document.getElementsByClassName("rating")[0].innerHTML=y+"%";
 const ratings = document.querySelectorAll(".rating");
-console.log("hi");
+
+
+
 // Iterate over all rating items
 ratings.forEach((rating) => {
   // Get content and get score as an int

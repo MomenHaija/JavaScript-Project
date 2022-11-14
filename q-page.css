@@ -59,3 +59,20 @@ body {
     align-self: center;
 
 }
+@media only screen and (min-device-width:0px) and (max-device-width:480px)
+{
+
+    .beige-container{
+        font-size: small;
+    }
+    
+.question-div {
+    font-size: x-large;
+}
+
+body{background-image: none;
+    background-color:#064f44;
+    
+ }
+ 
+}

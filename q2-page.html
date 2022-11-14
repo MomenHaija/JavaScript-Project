@@ -27,7 +27,7 @@
                 </form>
             </div>
             <button id="next" type="button" onclick="show2()">Next</button>
-            <button id="end"><a href="between2.html" >End</a></button>
+            <button id="end"><a href="between2.html"style="text-decoration:none;color:#f6c9a7;" >End</a></button>
             
         </div>
     </div>
@@ -35,62 +35,59 @@
     <script >
         var myQuestions2 = [
         {
-            question: "2Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven Ballon dOr awards',
-                d: 'three Ballon dOr awards'
-            },
-            correctAnswer: 'Six Ballon dOr awards'
+        question: "Q6.Which team lost their first three World Cup finals?",
+        answers: {
+            a: 'Brazil',
+            b: 'Holland (The Netherlands)',
+            c: 'Argentina',
+            d: 'France'
         },
-        {
-            question: "Player known as  (الحكومه)?",
-            answers: {
-                a: 'Cristiano Ronaldo',
-                b: 'Leo Messi',
-                c: 'Kareem Binzima  .',
-                d: 'Luka Modric'
-            },
-            correctAnswer: 'Cristiano Ronaldo'
-        }, {
-            question: "What is 30/3?",
-            answers: {
-                a: '3',
-                b: '5',
-                c: '10',
-                d: '33'
-            },
-            correctAnswer: '10'
+        correctAnswer: 'Holland (The Netherlands)'
+    },
+    {
+        question: "Q7.Name a country has won the World Cup twice?",
+        answers: {
+            a: "England",
+            b: "Croatia",
+            c: "Italy",
+            d: "France"
+
         },
-        {
-            question: "Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven Ballon dOr awards',
-                d: 'three Ballon dOr awards'
-            },
-            correctAnswer: 'Six Ballon dOr awards'
-        },{
-            question: "Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven',
-                d: 'three Ballon dOr awards'
-            },
-            correctAnswer: 'Six Ballon dOr awards'
-        },{
-            question: "Messi has won a record number of Ballon d'Or awards - how many?",
-            answers: {
-                a: 'Six Ballon dOr awards',
-                b: 'one Ballon dOr awards',
-                c: 'seven Ballon dOr awards',
-                d: 'three '
-            },
-            correctAnswer: 'Six Ballon dOr awards'
-        }
+        correctAnswer: "France"
+    },
+    {
+        question: "Q8.I've worn numbers 7, 17, 28 and 9 in my career, playing my football across, England, Spain, Italy and Portugal. who am I?",
+        answers: {
+            a: "Raul",
+            b: "Beckham",
+            c: "Cristiano Ronaldo",
+            d: "Cavani "
+
+        },
+        correctAnswer: "Cristiano Ronaldo"
+    },
+    {
+        question: "Q9.How many times has Rooney won the title of top scorer in the Premier League?",
+        answers: {
+            a: "Once",
+            b: "Twice",
+            c: "Three Times",
+            d: "Never"
+
+        },
+        correctAnswer: "Never"
+    },
+    {
+        question: "Q10.Two people can make two bicycles in 2 hours. How many people are required to make 12 bicycles in 6 hours?",
+        answers: {
+            a: "6",
+            b: "4",
+            c: "3",
+            d: "2"
+
+        },
+        correctAnswer: "2"
+    }
     ];
 
     myCounter = 0;
@@ -134,11 +131,13 @@
                     score++;
                     console.log(score);
         }
+        console.log(score);
+        let y=myCounter+5;
+        sessionStorage.setItem("you'r answer on Q"+y,answer[i].innerHTML);
+        localStorage.setItem("score2",score)
             }
         }
-        console.log(score);
-        sessionStorage.setItem("you'r answer on Q"+myCounter+1,answer);
-        localStorage.setItem("score2",score)
+        
 
     }
     </script>    

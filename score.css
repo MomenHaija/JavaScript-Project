@@ -34,9 +34,9 @@
       
         color: #064E42;
         font-weight: bold;
-       display:block;
+        display:none;
       }
-      .button{
+    .button{
         
     width: 150px;
     height: 50px;
@@ -44,13 +44,10 @@
     background-color: #064f44;
     font-size: large;
     border-radius: 15px;
+    text-decoration: none;
     align-self: center;
       }
       
-.button:hover {
-    background-color:#F2C8A2; ;
-    color: #064E42;;
-  }
       
       #btn {
         display: flex;
@@ -155,15 +152,16 @@
         
   @media only screen and (min-device-width:0px) and (max-device-width:480px)
   {
-
+body{background-image: none;}
 .card{
 
-    font-size: large;
+    width: auto;
+    font-size: small;
     margin-left:1rem;
 }
 
 .rating{
-    left:0%;
+    left:30%;
 }
 .button{font-size: small;}
 
@@ -173,3 +171,19 @@ justify-content: center;}
 
   }
 
+  @media only screen and (min-device-width:481px) and (max-device-width:768px)
+  {
+    
+      body{background-image: none;}
+    .card{
+
+      width: auto;
+      font-size: small;
+      margin-left:2rem;
+      margin-top:4rem;
+  }
+  
+.rating{
+  left:27%;
+}
+  }
